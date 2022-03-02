@@ -1,0 +1,430 @@
+body
+{
+  background-color:    hsl(0,0%,0%);
+}
+
+/*Side by side videos*/
+
+html *
+{
+   font-size: 1.01em !important;
+   color: #000 !important;
+   font-family: Helvetica !important;
+}
+
+#header {
+    width: 100%;
+    background-color: white;
+    height: 30px;
+}
+
+#container {
+    width: 1000;
+    background-color: white;
+    margin: auto;
+}
+#first {
+    width: 49%;
+    float: left;
+    height: 400;
+    background-color: white;
+}
+#second {
+    width: 49%;
+    float: right;
+    height: 400;
+    background-color: white;
+}
+#clear {
+    clear: both;
+}
+
+
+div#break
+{
+  width:               400px;
+  padding:             40px;
+  font-weight:         bold;
+  font-size:           20px;
+  background-color:    hsl(0,0%,0%);
+  color:               hsl(0,0%,0%);
+  text-align:          center;
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+div#break2
+{
+  width:               200px;
+  padding:             10px;
+  font-size:           14px;
+  background-color:    hsl(0,0%,0%);
+  color:               hsl(0,0%,0%);
+  text-align:          center;
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+div#winresized
+{
+  width:               400px;
+  padding:             40px;
+  font-weight:         bold;
+  font-size:           20px;
+  background-color:    hsl(0,0%,0%);
+  color:               hsl(0,0%,0%);
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+
+
+
+div#mobilebrowser
+{
+  width:               400px;
+  padding:             40px;
+  font-weight:         bold;
+  font-size:           20px;
+  background-color:    hsl(0,0%,0%);
+  color:               hsl(0,0%,0%);
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+div#instructions
+{
+  width:               400px;
+  padding:             20px;
+  font-size:           16px;
+  background-color:    hsl(0,0%,100%);
+  color:               hsl(0,0%,0%);
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+div#demographics_survey_div
+{
+  width:               400px;
+  padding:             20px;
+  font-size:           16px;
+  background-color:    hsl(0,0%,100%);
+  color:               hsl(0,0%,0%);
+  font-family:         sans-serif;
+  position:            fixed;
+}
+
+div#instructions_bg
+{
+  width:               500px;
+  height:              500px;
+  background-color:    hsl(0,0%,100%);
+  position:            fixed;
+}
+
+div#nextbutton
+{
+  width:               180px;
+  font-size:           20px;
+  border-style:       outset;
+  background-color:    lightgray;
+  font-weight:         bold;
+  text-align:          center;
+  font-family:         sans-serif;
+  color:               hsl(0,0%,75%);
+  padding:             6px;
+  position:            fixed;
+}
+
+div#backbutton
+{
+  width:               180px;
+  font-size:           20px;
+  border-style:       outset;
+  background-color:    lightgray;
+  font-weight:         bold;
+  text-align:          center;
+  font-family:         sans-serif;
+  color:               hsl(0,0%,75%);
+  padding:             6px;
+  position:            fixed;
+}
+
+/*div#nextbutton
+{
+  width:               180px;
+  border-style:       outset;
+  font-size:           20px;
+  font-weight:         bold;
+  text-align:          center;
+  font-family:         sans-serif;
+  background-color:    lightgray;
+  color:               hsl(0,0%,100%);
+  padding:             6px;
+  position:            fixed;
+}
+
+div#backbutton
+{
+  width:               180px;
+  border-style:       outset;
+  font-size:           20px;
+  font-weight:         bold;
+  text-align:          center;
+  font-family:        sans-serif;
+  background-color:    lightgray;
+  color:               hsl(0,0%,100%);
+  padding:             6px;
+  position:            fixed;
+}*/
+
+div.demo_popup
+{
+  width:               300px;
+  font-size:           12px;
+  font-family:         sans-serif;
+  background-color:    Khaki;
+  padding:             4px;
+  position:            fixed;
+}
+
+.buttonHolder input {
+    text-align: left;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.buttonHolder button {
+    text-align: center;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+}
+
+.surveyButtonHolder button input submit {
+    text-align: center;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+    display:block; 
+    float:none; 
+    margin-top:20px; 
+
+}
+
+
+.output{visibility:hidden; display:none;} 
+
+.buttonHolder input {
+    text-align: left;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.buttonHolder button {
+    text-align: center;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+}
+
+.surveyButtonHolder button input submit {
+    text-align: center;
+    width:100px; 
+    height:50px; 
+    vertical-align:middle;
+    top:25px; 
+    font-size: 20px;
+    font-family:"Arial", Arial, sans-serif;
+    display:block; 
+    float:none; 
+    margin-top:20px; 
+}
+
+.surveyButtonHolder label {
+    visibility:hidden;  display: block; float: none;color:black; border: 1px solid hsl(0,0%,75%);clear: left; width: 50%; text-align: left;  
+}
+div#dynamic-container{align:center; width:600px; height:600px; position:relative;background-color: black; border: 2px solid hsl(0,0%,50%);}
+div#innerCircle{align:center; margin-bottom:10px; text-align: center; line-height:400px;width: 580px; height: 580px; position: absolute; left: 10px; top:10px; background-color: black; border: 1px solid white;
+                border-radius:290px; -moz-border-radius: 290px; -webkit-border-radius: 290px;}           
+
+div#marker{width: 10px; height:20px; background: lime; position:absolute; left:295px; cursor: crosshair;
+            -moz-transform:rotate(0deg);
+            -moz-transform-origin:5px 300px;
+            transform:rotate(0deg);
+            transform-origin:5px 300px;                       
+            -ms-transform:rotate(0deg);
+            -ms-transform-origin:5px 300px;                                
+            -webkit-transform:rotate(0deg);
+            -webkit-transform-origin:5px 300px;                       
+            z-index:17;
+} 
+div#dynamic-container2{align:center; width:600px; height:600px; position:relative;background-color: black; border: 2px solid hsl(0,0%,50%);display:none;}
+div#innerCircle2{align:center; margin-bottom:10px; text-align: center; line-height:400px;width: 580px; height: 580px; position: absolute; left: 10px; top:10px; background-color: black; border: 1px solid white;
+                border-radius:290px; -moz-border-radius: 290px; -webkit-border-radius: 290px;display:none;}          
+
+div#marker2{width: 10px; height:20px; background: lime; position:absolute; left:295px; cursor: crosshair;
+            -moz-transform:rotate(0deg);
+            -moz-transform-origin:5px 300px;
+            transform:rotate(0deg);
+            transform-origin:5px 300px;                   
+            -ms-transform:rotate(0deg);
+            -ms-transform-origin:5px 300px;                                
+            -webkit-transform:rotate(0deg);
+            -webkit-transform-origin:5px 300px;                       
+            z-index:17;
+} 
+
+#outputNumber {
+    color: black;
+    font-size:20px;
+}
+#degNumber {
+    color: black;
+    font-size:20px;
+}
+#face{
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 165px;
+    width:240px; /* you can use % */
+    height: auto;
+}
+#totalTime {
+    text-align:center;
+    color: black;
+    font-size:20px;
+}
+#countdown {
+    text-align:center;
+    vertical-align:middle;
+    color: black;
+    font-size:50px;
+    margin-top:80px;
+}
+.circle{
+  background-color: white;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    vertical-align:middle;
+    align:center;
+}
+#testCircle {
+  border-radius: 100px;
+    -moz-border-radius: 100px; 
+    -webkit-border-radius: 100px;
+  left: 190px;
+  top: 190px;
+    height: 200px;
+    width: 200px; 
+}
+
+#testSquare {
+    width:100px;
+    height:100px;
+    left: 190px;
+    top: 190px;
+    height: 200px;
+    width: 200px; 
+    color: black;
+}
+
+
+
+.instructions{
+    text-align:justify; 
+    margin: 0 auto; 
+    width: 60em;
+    color: white;
+}
+
+
+
+.consent-box { 
+    border:solid 0px #98BE10; 
+    background:#CEE8FC; /* #FCF9CE */ 
+    color:#222222; padding:4px;
+ }
+
+ #consentForm {
+    display:block;
+ }
+
+
+ #consentPreamble{
+    display:block;
+ }
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(240,240,240);
+  background-color: rgba(240,240,240, 0.9);
+  overflow-x: hidden;
+  
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+ 
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+body {
+  font-family: 'Lato', sans-serif;
+}

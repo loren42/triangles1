@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chicken Game</title>
+    <style>
+      .ontop {
+          z-index: 999;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: none;
+          position: fixed;
+          background-color: #cccccc;
+          color: #aaaaaa;
+          opacity: .9;
+          filter: alpha(opacity=95);
+      }
+
+      #popup1 {
+          width: 300px;
+          height: 200px;
+          position: fixed;
+          color: #FF0000;
+          background-color: #ffffff;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -150px;
+      }
+
+      #popup2 {
+          width: 300px;
+          height: 200px;
+          position: fixed;
+          color: #FF0000;
+          background-color: #ffffff;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -150px;
+      }
+
+      #popup3 {
+          width: 300px;
+          height: 200px;
+          position: fixed;
+          color: #FF0000;
+          background-color: #ffffff;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -150px;
+      }
+
+
+      #popup4 {
+          width: 300px;
+          height: 200px;
+          position: fixed;
+          color: #FF0000;
+          background-color: #ffffff;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -150px;
+      }
+    </style>
+    <div style="display: none;"> </div>
+    <link rel="stylesheet" type="text/css" href="ani.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.29.1"></script>
+  <script type='text/javascript' src="necessary_functions.js"></script>
+  <script type='text/javascript' src="pace.min.js"> pace.start(); </script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js"></script>
+    <script type="text/javascript">
+    function pop(div) {
+        document.getElementById(div).style.display = 'block';
+    }
+
+    function hide(div) {
+        document.getElementById(div).style.display = 'none';
+    }
+    //To detect escape button
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+            hide('popDiv1');
+            hide('popDiv2');
+            hide('popDiv3');
+            hide('popDiv4');
+        }
+    };
+    </script>
+    <script>
+        function play() {
+                document.getElementById("padded").play();
+                document.getElementById("playButton").innerHTML = "X";
+                document.getElementById("playButton").onclick = "";
+              } 
+    </script>
+    <script>
+        function play_example1() {
+                document.getElementById("example1").play();
+                if (viewedExample1<1){
+                  movie1_play_time =  Date.now()
+                }
+                viewedExample1+=1;
+
+                setTimeout(function(){
+                    $('#example1ResponseButton').show();
+                    if (viewedExample1 > 0 && viewedExample2 > ) {
+                        $('#example1ResponseButton').attr('disabled', false);
+                        $('#example2ResponseButton').attr('disabled', false);
+                    }
+                    else {
+                        $('#example1ResponseButton').attr('disabled', true);
+                        $('#example2ResponseButton').attr('disabled', true);
+                    }
+                }, 3167);
+            } 
+    </script>
+    <script>
+        function play_example2() {
+                document.getElementById("example2").play();
+                if (viewedExample2<1){
+                  movie2_play_time =  Date.now()
+                }
+                viewedExample2+=1;
+
+                setTimeout(function(){
+                    $('#example2ResponseButton').show();
+                    if (viewedExample1 > 0 && viewedExample2 > 0) {
+                        $('#example1ResponseButton').attr('disabled', false);
+                        $('#example2ResponseButton').attr('disabled', false);
+                    }
+                    else {
+                        $('#example1ResponseButton').attr('disabled', true);
+                        $('#example2ResponseButton').attr('disabled', true);
+                    }
+                }, 3167);
+            }
+    </script>
+    <script>
+        function play_final() {
+                setTimeout(showNextButtonAgain,3167);
+
+                if (viewedFinal<1){
+                  final_movie_play_time =  Date.now()
+                }
+                viewedFinal=1;
+
+                document.getElementById("final_video").play();
+                document.getElementById("finalAnimationPlayButton").innerHTML = "X";
+                document.getElementById("finalAnimationPlayButton").onclick = "";
+            }
+    </script>
+    <script src="ani.js"></script>
+</head>
+
+<body>
+    <div id="popDiv1" class="ontop">
+        <table border="0" id="popup1">
+            <tr>
+                <td>
+                    Please answer all questions on this page!
+                    <a href="#" onClick="hide('popDiv1')"><b>Close</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="popDiv2" class="ontop">
+        <table border="0" id="popup2">
+            <tr>
+                <td>
+                    It looks like you put in something that is not a valid format for an M-Turk worker ID! Please try again. If you believe you have reached this message in error, please email.
+                    <a href="#" onClick="hide('popDiv2')"><b>Close</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="popDiv3" class="ontop">
+        <table border="0" id="popup3">
+            <tr>
+                <td>
+                    Please view all videos on this page before continuing!
+                    <a href="#" onClick="hide('popDiv3')"><b>Close</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="popDiv4" class="ontop">
+        <table border="0" id="popup4">
+            <tr>
+                <td>
+                    Please make sure to read the instructions -- you will not be able to respond until you have moved the rectangle all the way around the circle. Press the Esc key to close this window.
+                    <!-- <a href="#" onClick="hide('popDiv4')">Close</a> -->
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div type="hidden" class="output">
+        <p id="totalPageTime"> </p>
+    </div>
+    <script type="text/javascript">
+    </script>
+    <!-- Browser Check -->
+    <center>
+        <br>
+        <p id="instructions1" style="display:none;color:black;text-align:center; font-size: 100%;margin: 0 auto; width: 55em;">
+            <br><b>Browser Check </b> <br><br>Press play to view the test animation, then answer the question below.<br><br></p>
+        <button id="playButton" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="play()">Play</button><br><br>
+        <div id="video_container" class="video_container">
+            <video id="padded" width="400" height="400" preload="auto">
+                <source src="Triangles1.20001-0140 copy.mp4" type="video/mp4">
+            </video>
+            <br>
+        </div>
+        <br>
+        <div id="BrowserCheck_div" style="color:black;text-align:center; font-size: 100%;margin: 0 auto; width: 55em;margin-top::;::;1em;">
+            <b>Which triangle is bigger? </b><br>
+            <br>
+            <center>
+                <form name="BrowserCheck" id="Browser_Check" action="">
+                    <table border="1" cellpadding="7" cellspacing="0">
+                        <tr>
+                            <td>
+                                <input name="pq1" type="radio" value="CylSmooth" />
+                                Green (Left)
+                                <input name="pq1" type="radio" value="CylPause" />
+                                Pink (Right)
+                               <p>
+                                <input name="pq1" type="radio" value="None" />
+                                I couldn't view the animation
+                               </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <input name="submit" type="button" onClick="gradePQs()" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" value="Submit">
+                </form>
+            </center>
+        </div>
+    </center>
+    <!-- Browser Check -->
+    <div type="hidden" class="output">
+        <p id="totalPageTime"> </p>
+    </div>
+    <!-- Main js script goes in a separate document -->
+    <div id="instructions_bg">&nbsp;</div>
+    <div id="instructions">&nbsp;</div>
+    <div id="nextbutton">NEXT</div>
+    <div id="backbutton">BACK</div>
+    <div id="winresized">It looks like the window was resized during the previous trial!<br><br>Unfortunately, resizing your window disrupts the task and invalidates your results.<br><br>If you believe you have reached this message in error, please email the experimenter.<br><br>You can also try the HIT again, but you will have to start over at the beginning. If you don't want to do that, please return the HIT.</div>
+    <div id="mobilebrowser">It looks like you're trying to acess this HIT from a mobile device or tablet!<br><br>Unfortunately, this HIT can only be completed from a laptop/desktop computer. Please try again from there, or else return the HIT.<br><br>If you believe you have reached this message in error, please email</div>
+    <div id="demographics_survey_div">
+        <b>Demographics Questionnaire</b><br><br>
+        This is standard demographic information used primarily in grant reporting. If you do not wish to provide your sex/gender, simply select the "Other" option.
+        <br><br>
+        <form name="demographics_form" id="demographics_form" action="">
+            <label>What is your age?</label>
+            <select id="age_selector">
+                <option value="AgeEmpty"></option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+                <option value="71">71</option>
+                <option value="72">72</option>
+                <option value="73">73</option>
+                <option value="74">74</option>
+                <option value="75">75</option>
+                <option value="76">76</option>
+                <option value="77">77</option>
+                <option value="78">78</option>
+                <option value="79">79</option>
+                <option value="80">80</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="83">83</option>
+                <option value="84">84</option>
+                <option value="85">85</option>
+                <option value="86">86</option>
+                <option value="87">87</option>
+                <option value="88">88</option>
+                <option value="89">89</option>
+                <option value="90">90</option>
+                <option value="91">91</option>
+                <option value="92">92</option>
+                <option value="93">93</option>
+                <option value="94">94</option>
+                <option value="95">95</option>
+                <option value="96">96</option>
+                <option value="97">97</option>
+                <option value="98">98</option>
+                <option value="99">99</option>
+            </select><br><br>
+            <label>What is your sex/gender?</label>
+            <select id="gender_selector">
+                <option value="SexEmpty"></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="NoSex">Other</option>
+                <option value="NoSex">Prefer Not to Answer</option>
+            </select><br><br>
+        </form>
+    </div>
+    <div class="demo_popup" id="demographics_race_popup">
+        <b>American Indian or Alaska Native:</b> A person having origins in any of the original peoples of North, Central, or South America and maintaining tribal affiliations or community.<br>
+        <b>Asian:</b> A person having origins in any of the original peoples of the Far East, Southern Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.<br>
+        <b>Black or African American:</b> A person having origins in any of the black racial groups of Africa.<br>
+        <b>Native Hawaiian or other Pacific Islander:</b> A person having origins in any of the original people of Hawaii, Guam, Samoa, or other Pacific Islands.<br>
+        <b>White</b>: A person having origins in any of the original peoples of Europe, North Africa, or the Middle East.<br>
+        <b>Multiracial:</b> A person having ancestral origins in two or more of the above groups.
+    </div>
+    <div class="demo_popup" id="demographics_ethnicity_popup">
+        <b>Hispanic or Latino:</b> A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.
+    </div>
+    <div class="demo_popup" id="demographics_sex_popup">
+        If you do not wish to provide this information, feel free to select "prefer not to answer" in the dropdown menu.
+    </div>
+    <div class="demo_popup" id="demographics_age_popup">
+        Your age, in years. If you are under age 18, unfortunately you are not eligibile to participate in this experiment.
+    </div>
+    <div id="example_container">
+        <center>
+            <div id="container">
+                <div id="first">
+                    <div id="example_video_container1" class="video_container">
+                        <video id="example1" width="400" height="400" preload="auto">
+                            <source src="Triangles1.20001-0140 copy.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <button id="example1PlayButton" button id="playButton" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="play_example1()">Play Video 1</button><br><br>
+                    <button id="example1ResponseButton" button id="responseButton1" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="submitChoice1()">I prefer this</button><br><br>
+                </div>
+            </div>
+            <div id="second">
+                <div id="example_video_container2" class="video_container">
+                    <video id="example2" width="400" height="400" preload="auto">
+                        <source src="Triangles1.20001-0140 copy.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <button id="example2PlayButton" button id="playButton" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="play_example2()">Play Video 2</button><br><br>
+                <button id="example2ResponseButton" button id="responseButton2" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="submitChoice2()">I prefer this</button><br><br>
+            </div>
+    </div>
+    </center>
+    </div>
+    <div id="final">
+        <center>
+            <button id="finalAnimationPlayButton" button id="playButton" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onclick="play_final()">Play Final Video</button><br><br>
+            <div id="final_video_container" class="video_container">
+                <video id="final_video" width="400" height="400" preload="auto">
+                    <source src="Triangles1.20001-0140 copy.mp4" type="video/mp4">
+                </video>
+            </div>
+        </center>
+    </div>
+    <div id="debriefing_questionairre_div" style="display:none;color:black;text-align:justify; font-size: 100%;margin: 0 auto; width: 75em;margin-top:1em;">
+        <br><b>Follow-up Questions </b><br><br>
+        <b> You're almost done! Please answer these follow-up questions to help us improve the experiment.</b><br>
+        <br>
+        <form name="debriefing_questionairre_form" id="debriefing_questionairre_form" action="" display>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <tr>
+                    <td><b>Did you switch windows during the task?</b></td>
+                    <td><input name="dq1" type="radio" value="Yes" />
+                        Yes |
+                        <input name="dq1" type="radio" value="No" />
+                        No
+                </tr>
+            </table>
+            <br><b>In 1-3 sentences, please summarize the instructions that you were given in the two tasks.</b><br><br>
+            <textarea id="dq2" minlength="15" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br>
+            <br><b>Were the instructions clear enough? If not, what part was unclear?</b><br><br>
+            <textarea id="dq3" minlength="1" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br>
+            <br><b>Had you ever heard of an experiment like this before? If so, please describe it in a just a few words.</b><br><br>
+            <textarea id="dq4" minlength="1" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br>
+            <br><b>Were there any problems with the display?</b><br><br>
+            <textarea id="dq5" minlength="1" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br>
+            <br><b>How well do you think you did?</b><br><br>
+            <textarea id="dq6" minlength="1" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br>
+            <br><b>In what way did you choose the answer you gave?</b><br><br>
+            <textarea id="dq7" minlength="1" type="text" cols="180" rows="4" name="comment"></textarea> <br /><br><br>
+            <input name="submit3" type="button" button id="playButton" style="color:black; background:lightgray; font-size: 100%;margin: 0 auto; margin-top:1em;" onClick="gradeDebriefingQuestions()" value="Submit" /><br><br><br>
+        </form>
+    </div>
+    <div id="myNav" class="overlay">
+      <h1 style="text-align: center; margin-top: 25%;">Click to View Next Pair</h1>
+    </div>
+</body>
+
+</html>
